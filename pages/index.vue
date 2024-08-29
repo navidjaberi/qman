@@ -1,17 +1,6 @@
 <template>
-  <div class="rtl ">
-    <SectionHome/>
-    <SectionServices/>
-    <SectionProject/>
-    <SectionContact/>
-    <TheFooter/>
-  </div>
-  <!--  -->
+<div>
+    
+</div>
 </template>
-
-<script setup>
-
-
-</script>
-
-<style></style>
+<script setup></script>

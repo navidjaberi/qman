@@ -5,6 +5,15 @@ export default defineNuxtPlugin((app) => {
   const vuetify = createVuetify({
     ssr: true,
     defaults,
+    display:{
+thresholds:{
+  xs: 0,
+  sm: 340,
+  md: 767,
+  lg: 1024,
+  xl: 1280,
+}
+    },
     // add theme
     theme: {
       defaultTheme: LIGHT_THEME,

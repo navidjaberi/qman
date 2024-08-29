@@ -1,0 +1,95 @@
+<template>
+  <div class="px-15">
+    <div class="flex justify-between align-center">
+      <p class="text-[24px] font-bold">رایاکافه کرج</p>
+      <p class="text-[14px] font-semibold">شماره اشتراک:۴۵۷۸</p>
+    </div>
+    <div class="md:px-56">
+      <div class="flex justify-around my-12">
+        <div>
+          <BaseButtonOutline mode="primary" prepend="mdi-comment-outline" class="pa-4 mx-auto" />
+          <p class="text-[12px] font-bold mt-2">تیکت پشتیبانی</p>
+        </div>
+
+        <div>
+          <BaseButtonOutline mode="primary" prepend="mdi-headphones" class="pa-4 mx-auto" />
+          <p class="text-[12px] font-bold mt-2">تماس با پشتیبانی</p>
+        </div>
+        <div>
+          <BaseButtonOutline mode="primary" prepend="mdi-comment-quote" class="pa-4 mx-auto" />
+          <p class="text-[12px] font-bold mt-2">نظر درباره ما</p>
+        </div>
+      </div>
+      <div class="mx-auto">
+        <v-card
+          class="!bg-gradient-to-r from-[#00A6ED] to-[#1F43FF] !flex justify-center text-white align-center mx-auto"
+          max-width="500"
+          height="100"
+        >
+          <p class="text-[20px] font-black">ویرایش و اضافه کردن اطلاعات منو</p>
+        </v-card>
+        <v-card
+          class="!bg-gradient-to-r from-[#F46242] to-[#FFA800] !flex text-white justify-center align-center mt-2 mx-auto"
+          max-width="500"
+          height="100"
+        >
+          <p class="text-[20px] font-black">ویرایش اطلاعات مجموعه</p>
+        </v-card>
+      </div>
+      <div class="mt-10 text-center">
+        <p class="text-[16px] font-semibold">مدت باقیمانده از بسته:</p>
+        <p class="text-green-600 text-[24px] font-black mt-4">24 روز</p>
+      </div>
+      <div class="mt-10">
+        <p class="px-2 text-[12px] mb-1">قالب انتخابی شما</p>
+        <v-text-field required color="main" density="compact"> </v-text-field>
+      </div>
+      <div class="mt-2">
+        <p class="px-2 text-[12px] mb-1">رنگ انتخابی شما</p>
+        <v-text-field required color="main" density="compact"> </v-text-field>
+      </div>
+      <div class="my-9 text-center">
+        <BaseButtonFill
+          mode="primary"
+          text="پیش نمایش منو"
+          append="mdi-eye-outline"
+          class="px-4 py-3 mx-3 text-[14px] !font-semibold w-48"
+        />
+        <BaseButtonOutline
+          mode="secondary"
+          text="ویراش قالب و رنگ"
+          append="mdi-pencil"
+          class="px-4 py-3 mx-3 mt-3 text-[14px] !font-semibold w-48"
+        />
+      </div>
+      <div >
+        <p class="px-2 text-[12px] mb-1"> نام مجموعه شما</p>
+        <v-text-field required color="main" density="compact"> </v-text-field>
+      </div>
+      <div class="mt-2">
+        <p class="px-2 text-[12px] mb-1">شماره تماس</p>
+        <v-text-field required color="main" density="compact"> </v-text-field>
+      </div>
+      <div class="mt-2">
+        <p class="px-2 text-[12px] mb-1">آدرس شما</p>
+        <v-text-field required color="main" density="compact"> </v-text-field>
+      </div>
+      <div class="mt-2">
+        <p class="px-2 text-[12px] mb-1">آدرس اینستاگرام</p>
+        <v-text-field required color="main" density="compact"> </v-text-field>
+      </div>
+      <div class="mt-2">
+        <p class="px-2 text-[12px] mb-1">آدرس تلگرام</p>
+        <v-text-field required color="main" density="compact"> </v-text-field>
+      </div>
+      <div class="mt-2 mb-15">
+        <p class="px-2 text-[12px] mb-1">آدرس وبسایت</p>
+        <v-text-field required color="main" density="compact"> </v-text-field>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup></script>
+
+<style></style>

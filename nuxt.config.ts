@@ -1,4 +1,3 @@
-import { NuxtLoadingIndicator } from './.nuxt/components.d';
 import vuetify from "vite-plugin-vuetify";
 const title = "Rayanik";
 const shortTitle = "Rayanik";
@@ -17,10 +16,10 @@ export default defineNuxtConfig({
     },
   },
 
-  nitro:{
-prerender:{
-  routes:['/','design-website','contact-us','projects']
-}
+  nitro: {
+    prerender: {
+      routes: ["/", "design-website", "contact-us", "projects"],
+    },
   },
 
   build: { transpile: ["vuetify"] },
@@ -41,23 +40,24 @@ prerender:{
       });
     },
     "@pinia/nuxt",
-    'nuxt-svgo',
-    '@nuxt/image',
-    '@vueuse/motion/nuxt',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode'
+    "nuxt-svgo",
+    "@nuxt/image",
+    "@vueuse/motion/nuxt",
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/color-mode",
 
-    
   ],
-
+  pinia: {
+    storesDirs: ['./store/**'],
+  },
   colorMode: {
-    classSuffix: '',
-    preference: 'dark',
-    fallback: 'dark'
-},
+    classSuffix: "",
+    preference: "dark",
+    fallback: "dark",
+  },
 
   svgo: {
-    autoImportPath: './assets/svg/',
+    autoImportPath: "./assets/svg/",
   },
 
   postcss: {
@@ -96,15 +96,15 @@ prerender:{
     head: {
       title: "Rayanik",
       titleTemplate: "Rayanik",
-      
+
       link: [
         { rel: "stylesheet", href: "https://rsms.me/inter/inter.css" },
         { rel: "preconnect", href: "https://rsms.me/" },
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        
+
         // { rel: "canonical", href: url },
       ],
-      
+
       htmlAttrs: { dir: "rtl", lang: "fa" },
       meta: [
         {
@@ -147,5 +147,5 @@ prerender:{
     },
   },
 
-  plugins: ["~/plugins/vuetify.ts", "~/plugins/loading.ts"]
+  plugins: ["~/plugins/vuetify.ts"],
 });
