@@ -73,6 +73,10 @@ body {
 .v-field__field {
   direction: rtl !important;
 }
+.v-field__input{
+  text-align: right!important;
+  // border: 1px solid #9195A1;
+}
 
 // Reset link styles
 a {
@@ -104,13 +108,19 @@ p {
     border-radius: 0 10px 10px 0 !important;
   }
 }
-.v-field__input {
-  font-size: 9px;
-  text-align: center;
-}
+// .v-field__input {
+//   font-size: 9px;
+//   text-align: center;
+// }
 .v-field--appended {
   padding-inline-end: 0px !important;
 }
 .v-badge__badge{
   bottom: calc(100% - -13px)!important;
+}
+.v-list-item-title{
+  font-size: 10px!important;
+}
+.v-overlay-container{
+text-align: right!important;
 }

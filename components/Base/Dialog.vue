@@ -9,17 +9,21 @@
           <div
             class="size-20 bg-green-100 border-2 border-black rounded-full mx-auto flex align-center justify-center"
           >
-            <v-icon size="x-large">mdi-login</v-icon>
+            <v-icon size="x-large">{{ mode === "auth" ? "mdi-login" : "mdi-plus" }} </v-icon>
           </div>
           <KeepAlive>
             <component
+              v-if="mode === 'auth'"
               :is="authActive ? userAuth : otp"
               @signedIn="signedIn"
               @signedUp="signedUp"
               @editPhoneNum="editPhoneNum"
               @confirmOTPCode="confirmOTPCode"
             />
+
+    
           </KeepAlive>
+          <GlobalAddItem v-if="mode==='addItem'" />
         </div>
       </v-card>
     </v-dialog>
@@ -30,6 +34,7 @@ import userAuth from "@/components/Global/TheUserAuth.vue";
 import otp from "@/components/Global/TheOTP.vue";
 const props = defineProps<{
   dialogActive: boolean;
+  mode: "auth" | "addItem";
 }>();
 const emit = defineEmits(["update:dialogActive"]);
 const store = useAuthentication();

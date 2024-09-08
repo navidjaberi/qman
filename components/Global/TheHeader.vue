@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BaseAuthDialog :dialogActive="dialog" @update:dialogActive="dialogActive" />
+    <BaseDialog :dialogActive="dialog" @update:dialogActive="dialogActive" mode="auth" />
     <div
       class="!fixed z-50 bg-white md:!bg-transparent h-[72px] mt-4 w-full flex justify-between items-center shadow-sm md:shadow-none"
     >
@@ -24,11 +24,10 @@
           />
         </div>
         <div class="flex align-center" v-else>
-          <BaseButtonOutline class="pa-3 mx-3" prepend="mdi-bell-outline" mode="primary">
+          <BaseButtonOutline class="pa-3 !mx-3" prepend="mdi-bell-outline" mode="primary">
             <v-badge color="red" content="2"></v-badge>
           </BaseButtonOutline>
-
-          <BaseButtonOutline icon="mdi-account-outline" class="pa-3" mode="primary" />
+          <BaseButtonOutline prepend="mdi-account-outline" class="pa-3" mode="primary" />
           <p class="text-[18px] font-black mx-3">سلام جابری</p>
         </div>
       </div>
