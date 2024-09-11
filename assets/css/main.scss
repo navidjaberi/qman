@@ -3,7 +3,7 @@ $family: "yekanBakh", "iransansxv", "Inter", apple-system, BlinkMacSystemFont, "
 @use "vuetify" with (
   $body-font-family: $family
 );
-@tailwind base;
+
 @tailwind components;
 @tailwind utilities;
 @layer utilities {
