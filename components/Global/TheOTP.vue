@@ -23,11 +23,7 @@
           :isDisabled="codeLoading"
           :inputClasses="[codeError ? 'code-error' : '']"
         />
-        <!-- <div  class="d-flex pa-0 mx-auto mt-7 justify-center"> -->
-        <!-- <v-chip color="teal-accent-4" @click="changeNumber">
-        <p class="text">تغییر شماره موبایل</p>
-      </v-chip> -->
-        <!-- </div> -->
+
         <p class="text-error text-body-2 mb-4" v-if="codeError">
           کد وارد شده صحیح نیست دوباره تلاش کنید
         </p>

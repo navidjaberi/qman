@@ -13,17 +13,13 @@
           </div>
           <KeepAlive>
             <component
-              v-if="mode === 'auth'"
-              :is="authActive ? userAuth : otp"
+              :is="dialogConditions"
               @signedIn="signedIn"
               @signedUp="signedUp"
               @editPhoneNum="editPhoneNum"
               @confirmOTPCode="confirmOTPCode"
             />
-
-    
           </KeepAlive>
-          <GlobalAddItem v-if="mode==='addItem'" />
         </div>
       </v-card>
     </v-dialog>
@@ -32,6 +28,7 @@
 <script setup lang="ts">
 import userAuth from "@/components/Global/TheUserAuth.vue";
 import otp from "@/components/Global/TheOTP.vue";
+import addItem from "../Global/AddItem.vue";
 const props = defineProps<{
   dialogActive: boolean;
   mode: "auth" | "addItem";
@@ -39,6 +36,17 @@ const props = defineProps<{
 const emit = defineEmits(["update:dialogActive"]);
 const store = useAuthentication();
 const authActive = ref(true);
+const dialogConditions = computed(() => {
+  if (props.mode === "addItem") {
+    return addItem;
+  } else if (props.mode === "auth") {
+    if (authActive.value) {
+      return userAuth;
+    } else {
+      return otp;
+    }
+  }
+});
 const dialogActive = computed({
   get() {
     return props.dialogActive;

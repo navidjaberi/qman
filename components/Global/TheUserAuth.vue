@@ -41,7 +41,6 @@
 </template>
 
 <script setup>
-
 const singInDialogActive = ref(true);
 const emit = defineEmits(["signedIn", "signedUp"]);
 const userLogin = () => {

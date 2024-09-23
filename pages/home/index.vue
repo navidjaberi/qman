@@ -148,7 +148,7 @@
 <script setup>
 import { useDisplay } from "vuetify";
 const { lgAndUp } = useDisplay();
-const model = ref([]);
+const model = ref();
 </script>
 
 <style lang="scss">
