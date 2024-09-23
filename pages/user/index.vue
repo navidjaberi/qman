@@ -45,27 +45,25 @@
       <v-form @submit.prevent="submitData">
         <div class="mt-10">
           <p class="px-2 text-[12px] mb-1">قالب انتخابی شما</p>
-          <v-text-field
+          <v-text-field-primary
             :disabled="disableInputs"
-            variant="solo"
+
             v-model="formData.selectedTemplate"
             required
-            color="main"
-            density="compact"
+        
           >
-          </v-text-field>
+          </v-text-field-primary>
         </div>
         <div class="mt-2">
           <p class="px-2 text-[12px] mb-1">رنگ انتخابی شما</p>
-          <v-text-field
+          <v-text-field-primary
             :disabled="disableInputs"
-            variant="solo"
+    
             v-model="formData.selectedColor"
             required
-            color="main"
-            density="compact"
+       
           >
-          </v-text-field>
+          </v-text-field-primary>
         </div>
         <div class="my-9 text-center">
           <BaseButtonFill
@@ -83,37 +81,34 @@
         </div>
         <div>
           <p class="px-2 text-[12px] mb-1">نام مجموعه شما</p>
-          <v-text-field
+          <v-text-field-primary
             :disabled="disableInputs"
-            variant="solo"
+          
             v-model="formData.companyName"
             required
-            color="main"
-            density="compact"
+         
           >
-          </v-text-field>
+          </v-text-field-primary>
         </div>
         <div class="mt-2">
           <p class="px-2 text-[12px] mb-1">شماره تماس</p>
-          <v-text-field
+          <v-text-field-primary
             :disabled="disableInputs"
-            variant="solo"
+          
             v-model="formData.phoneNumber"
             required
-            color="main"
-            density="compact"
+         
           >
-          </v-text-field>
+          </v-text-field-primary>
         </div>
         <div class="mt-2">
           <p class="px-2 text-[12px] mb-1">استان</p>
           <v-autocomplete
             :items="states"
-            color="main"
-            density="compact"
+         
             v-model="formData.selectedState"
             :counter="false"
-            variant="solo"
+          
             :disabled="disableInputs"
           />
         </div>
@@ -121,86 +116,79 @@
           <p class="px-2 text-[12px] mb-1">شهر</p>
           <v-autocomplete
             :items="getCitiesByStates(formData.selectedState)"
-            color="main"
-            density="compact"
+         
             v-model="formData.selectedCity"
             :counter="false"
-            variant="solo"
+          
             :disabled="disableInputs"
           />
         </div>
         <div class="mt-2">
           <p class="px-2 text-[12px] mb-1">محله</p>
-          <v-text-field
+          <v-text-field-primary
             :disabled="disableInputs"
-            variant="solo"
+          
             v-model="formData.parish"
             required
-            color="main"
-            density="compact"
+         
           >
-          </v-text-field>
+          </v-text-field-primary>
         </div>
 
         <div class="mt-2">
           <p class="px-2 text-[12px] mb-1">خیابان</p>
-          <v-text-field
+          <v-text-field-primary
             :disabled="disableInputs"
-            variant="solo"
+          
             v-model="formData.street"
             required
-            color="main"
-            density="compact"
+         
           >
-          </v-text-field>
+          </v-text-field-primary>
         </div>
         <div class="mt-2">
           <p class="px-2 text-[12px] mb-1">پلاک</p>
-          <v-text-field
+          <v-text-field-primary
             :disabled="disableInputs"
-            variant="solo"
+          
             v-model="formData.unit"
             required
-            color="main"
-            density="compact"
+         
           >
-          </v-text-field>
+          </v-text-field-primary>
         </div>
         <div class="mt-2">
           <p class="px-2 text-[12px] mb-1">آدرس اینستاگرام</p>
-          <v-text-field
+          <v-text-field-primary
             :disabled="disableInputs"
-            variant="solo"
+          
             v-model="formData.instagram"
             required
-            color="main"
-            density="compact"
+         
           >
-          </v-text-field>
+          </v-text-field-primary>
         </div>
         <div class="mt-2">
           <p class="px-2 text-[12px] mb-1">آدرس تلگرام</p>
-          <v-text-field
+          <v-text-field-primary
             :disabled="disableInputs"
-            variant="solo"
+          
             v-model="formData.telegram"
             required
-            color="main"
-            density="compact"
+         
           >
-          </v-text-field>
+          </v-text-field-primary>
         </div>
         <div class="mt-2">
           <p class="px-2 text-[12px] mb-1">آدرس وبسایت</p>
-          <v-text-field
+          <v-text-field-primary
             :disabled="disableInputs"
-            variant="solo"
+          
             v-model="formData.website"
             required
-            color="main"
-            density="compact"
+         
           >
-          </v-text-field>
+          </v-text-field-primary>
         </div>
         <BaseButtonFill
           text="ثبت تغییرات"

@@ -79,11 +79,11 @@
             برای انتخاب بهتر و توضیحات کامل کافیه شماره ات رو وارد کنی تا تو سریع ترین زمان باهات
             تماس بگیریم
           </p>
-          <v-text-field
+          <v-text-field-primary
             class="mt-5"
-            density="compact"
+           
             placeholder="شماره تماس خود را وارد کنید"
-            variant="solo"
+        
             hide-details
             single-line
             @click:append-inner=""
@@ -95,7 +95,7 @@
                 class="!rounded-r-none !rounded-l-sm !h-[40px]"
               />
             </template>
-          </v-text-field>
+          </v-text-field-primary>
         </div>
         <NuxtImg src="/svg/home/shape-blue.svg" class="w-full"></NuxtImg>
       </div>

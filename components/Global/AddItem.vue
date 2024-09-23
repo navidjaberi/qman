@@ -8,7 +8,7 @@
         <v-row>
           <v-col cols="12 pt-0">
             <p class="px-2 text-[12px] mb-1">نام آیتم موردنظر را وارد نمائید</p>
-            <v-text-field required color="main" density="compact"> </v-text-field>
+            <v-text-field-primary required > </v-text-field-primary>
           </v-col>
         </v-row>
         <BaseButtonFill

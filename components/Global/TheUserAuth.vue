@@ -11,13 +11,13 @@
         <v-row>
           <v-col cols="12" v-if="!singInDialogActive">
             <p class="px-2 text-[12px] mb-1">نام مجموعه شما</p>
-            <v-text-field required color="main" density="compact" placeholder="جابرکافه">
-            </v-text-field>
+            <v-text-field-primary required  placeholder="جابرکافه">
+            </v-text-field-primary>
           </v-col>
           <v-col cols="12 pt-0">
             <p class="px-2 text-[12px] mb-1">شماره تماس</p>
-            <v-text-field required color="main" density="compact" placeholder="10 10 100 0912">
-            </v-text-field>
+            <v-text-field-primary required  placeholder="10 10 100 0912">
+            </v-text-field-primary>
           </v-col>
         </v-row>
         <BaseButtonFill
