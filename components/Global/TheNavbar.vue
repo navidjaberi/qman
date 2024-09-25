@@ -10,10 +10,9 @@
         :value="item.title"
         class="border border-gray-300 rounded-lg w-11/12 mb-3 '"
         :height="44"
-        
       >
-        <template #prepend >
-          <v-icon class="mr-6" >mdi-home-city</v-icon>
+        <template #prepend>
+          <Icon :name="item.icon" size="1.5rem" class="mr-5" />
         </template>
         <template #title>
           <p class="text-[13px] font-semibold">
@@ -29,6 +28,7 @@ interface Items {
   title: string;
   id: number;
   link: string;
+  icon:string;
 }
 const route: any = useRoute();
 const currentItem = computed(() => {
@@ -45,12 +45,12 @@ const currentItem = computed(() => {
   }
 });
 const items = ref<Items[]>([
-  { title: "صفحه اصلی", id: 1, link: "/" },
-  { title: "قالب ها", id: 2, link: "/design-website" },
-  { title: "ثبت سفارش", id: 3, link: "/seo-form" },
-  { title: "وبلاگ", id: 8, link: "/projects" },
-  { title: "پشتیبانی", id: 7, link: "/" },
-  { title: "درباره ما", id: 5, link: "/contact-us" },
+  { title: "صفحه اصلی", id: 1, link: "/home",icon:'solar:home-angle-linear' },
+  { title: "قالب ها", id: 2, link: "/design-website",icon:'fluent:calendar-template-20-regular' },
+  { title: "ثبت سفارش", id: 3, link: "/seo-form",icon:'solar:add-circle-linear' },
+  { title: "وبلاگ", id: 8, link: "/projects",icon:'solar:book-minimalistic-outline' },
+  { title: "پشتیبانی", id: 7, link: "/contact" ,icon:'streamline:interface-help-customer-support-1-customer-headset-help-microphone-phone-support'},
+  { title: "درباره ما", id: 5, link: "/about-us" ,icon:'ph:users-three'},
 ]);
 </script>
 

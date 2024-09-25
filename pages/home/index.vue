@@ -38,7 +38,7 @@
       text="اطلاعات بیشتر"
       mode="primary"
     ></BaseButtonOutline>
-    <div class="mt-9 relative slide">
+    <div class="mt-9 relative slide px-5">
       <p class="text-[16px] !font-black">
         نگاهی به قالب های <span class="text-[18px] text-gr"> کیومن</span>
       </p>
@@ -66,7 +66,7 @@
           </div>
         </div>
         <div class="w-[40%] mx-1">
-          <NuxtImg src="/svg/home/shape-orange.svg" class="w-full"> </NuxtImg>
+          <v-img src="/svg/home/shape-orange.svg" > </v-img>
         </div>
       </div>
       <div class="md:w-5/6 lg:w-4/6 mx-auto mt-2 px-1 relative">
@@ -81,9 +81,7 @@
           </p>
           <v-text-field-primary
             class="mt-5"
-           
             placeholder="شماره تماس خود را وارد کنید"
-        
             hide-details
             single-line
             @click:append-inner=""
@@ -102,7 +100,7 @@
     </div>
     <div class="mt-20">
       <div>
-        <v-slide-group v-model="model" class="ltr mt-5" selected-class="bg-primary">
+        <v-slide-group v-model="model" class=" mt-5" selected-class="bg-primary">
           <CardComment
             v-for="n in 15"
             :key="n"
@@ -164,14 +162,14 @@ const model = ref();
     height: 20px;
     position: absolute;
     top: 0px;
-    left: 30px;
+    left: 0px;
   }
   .v-slide-group__prev {
     width: 20px;
     height: 20px;
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: 30px;
   }
 }
 

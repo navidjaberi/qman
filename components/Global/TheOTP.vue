@@ -9,7 +9,7 @@
       @click-handler="editPhoneNum"
     />
     <v-form @submit.prevent="confirmCode" class="confirm">
-      <div class="text-right px-20 mt-6">
+      <div class="text-right px-20 mt-6 ltr">
         <p class="mb-3 text-[14px] font-semibold">کد را وارد کنید</p>
 
         <OTPParent
@@ -29,11 +29,12 @@
         </p>
         <div class="text-center">
           <v-btn
-            class="mt-10 mb-3 px-5 text-[13px] !font-medium"
+            class="mt-10 mb-3 px-5 text-[13px] !font-medium mx-auto"
             size="medium"
             :disabled="codeLoading"
             v-if="resendCode"
             @click="resendCodeHandler"
+            variant="text"
             >ارسال مجدد کد</v-btn
           >
           <p v-else class="mt-10 mb-3 px-5 text-[13px] !font-semibold"> {{ timer }}</p>
@@ -41,7 +42,7 @@
       </div>
       <div class="text-center">
         <BaseButtonFill
-          class="px-12 mb-5"
+          class="px-12 mb-5 mx-auto"
           mode="primary"
           :disabled="otp.length < 4 || codeLoading"
           :loading="codeLoading"

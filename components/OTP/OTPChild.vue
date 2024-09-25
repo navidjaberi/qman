@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; align-items: center">
+  <div style="display: flex; align-items: center;">
     <input
       data-test="single-input"
       :type="inputTypeValue"

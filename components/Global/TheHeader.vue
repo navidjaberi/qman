@@ -2,12 +2,12 @@
   <div>
     <BaseDialog :dialogActive="dialog" @update:dialogActive="dialogActive" mode="auth" />
     <div
-      class="!fixed z-50 bg-white md:!bg-transparent h-[72px] mt-4 w-full flex justify-between items-center shadow-sm md:shadow-none"
+      class="!fixed z-50 bg-white lg:!bg-transparent h-[72px] mt-4 w-full flex justify-between items-center shadow-sm md:shadow-none"
     >
       <div class="flex items-center">
         <BaseButtonOutline
           prepend="mdi-menu"
-          class="mr-4 !text-[13px] pa-2 !flex md:!hidden"
+          class="mr-4 !text-[13px] pa-2 !flex lg:!hidden"
           @clickHandler="drawer = !drawer"
           mode="primary"
         ></BaseButtonOutline>
@@ -38,19 +38,11 @@
       :elevation="5"
       class="!fixed"
       :width="264"
-      :rail="rail"
-      :permanent="mdAndUp"
+      :permanent="lgAndUp"
     >
       <div>
         <div>
           <div class="bg-gray-50 w-full text-center py-3 mt-8">
-            <v-btn
-              :icon="drawerIcon"
-              @click.stop="md ? (rail = !rail) : (drawer = !drawer)"
-              size="medium"
-              class="!absolute lg:!hidden -left-3 top-13 text-gray-600 !text-[16px] !border-2 border-gray-600"
-            >
-            </v-btn>
             <p class="text-main-blue-800 text-[20px] font-black">کیومن</p>
           </div>
           <GlobalTheNavbar direction="vertical" class="my-2 !mt-20 text-black dark:!text-white" />
@@ -62,34 +54,14 @@
 
 <script setup lang="ts">
 import { useDisplay } from "vuetify";
-const { md, mdAndUp } = useDisplay();
-const rail = ref<null | boolean>(null);
+const { md, lgAndUp } = useDisplay();
 const drawer = ref<null | boolean>(null);
 const dialog = ref<boolean>(false);
 const store = useAuthentication();
 const loggedIn = computed(() => {
   return store.isLoggedInGet;
 });
-const drawerIcon = computed(() => {
-  if (md.value) {
-    if (rail.value) {
-      return "mdi-chevron-left";
-    } else {
-      return "mdi-chevron-right";
-    }
-  } else {
-    return "mdi-chevron-right";
-  }
-});
-watch(md, () => {
-  if (md.value) {
-    drawer.value = true;
-    rail.value = true;
-  } else {
-    drawer.value = false;
-    rail.value = null;
-  }
-});
+
 const dialogActive = (newVal: boolean) => {
   dialog.value = newVal;
 };

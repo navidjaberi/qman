@@ -45,10 +45,10 @@ export default defineNuxtConfig({
     "@vueuse/motion/nuxt",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/color-mode",
-
+    "@nuxt/icon",
   ],
   pinia: {
-    storesDirs: ['./store/**'],
+    storesDirs: ["./store/**"],
   },
   colorMode: {
     classSuffix: "",
