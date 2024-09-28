@@ -30,7 +30,9 @@ export default defineNuxtConfig({
       baseURL: process.env.BASE_URL || "http://192.168.100.23:2030/swagger/index.html",
     },
   },
-
+  routeRules: {
+    "/": { redirect: "/home" },
+  },
   modules: [
     async (options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {
