@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="w-[400px] md:w-9/12 mx-auto px-4 flex h-[250px] md:h-[350px] lg:h-[400px] justify-around"
+      class="w-[380px] md:w-9/12 mx-auto px-4 flex h-[250px] md:h-[350px] lg:h-[400px] justify-around"
     >
       <p
         class="!sans text-accent-800 text-[20px] md:text-[35px] lg:text-[45px] font-black drop-shadow-md -mr-10"
@@ -48,6 +48,8 @@
         selected-class="bg-primary"
         multiple
         show-arrows
+        prev-icon="mdi-chevron-left-circle-outline"
+        next-icon="mdi-chevron-right-circle-outline"
       >
         <CardTemplate v-for="n in 15" :key="n" />
       </v-slide-group>
@@ -66,7 +68,13 @@
           </div>
         </div>
         <div class="w-[40%] mx-1">
-          <v-img src="/svg/home/shape-orange.svg" > </v-img>
+          <v-img src="/svg/home/shape-orange.svg">
+            <v-img
+              src="/svg/home/phone.svg"
+              class="mx-auto md:max-2xl:!mt-10 md:max-2xl:w-56 w-28 mt-3"
+            >
+            </v-img
+          ></v-img>
         </div>
       </div>
       <div class="md:w-5/6 lg:w-4/6 mx-auto mt-2 px-1 relative">
@@ -100,7 +108,13 @@
     </div>
     <div class="mt-20">
       <div>
-        <v-slide-group v-model="model" class=" mt-5" selected-class="bg-primary">
+        <v-slide-group
+          v-model="model"
+          class="mt-5"
+          selected-class="bg-primary"
+          prev-icon="mdi-chevron-left-circle-outline"
+          next-icon="mdi-chevron-right-circle-outline"
+        >
           <CardComment
             v-for="n in 15"
             :key="n"
@@ -117,6 +131,8 @@
           class="ltr mt-5"
           selected-class="bg-primary"
           :show-arrows="lgAndUp"
+          prev-icon="mdi-chevron-left-circle-outline"
+          next-icon="mdi-chevron-right-circle-outline"
         >
           <div
             v-for="n in 15"

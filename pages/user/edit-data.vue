@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BaseDialog :dialogActive="dialog" @update:dialogActive="dialogActive"  mode="addItem" />
+    <BaseDialog :dialogActive="dialog" @update:dialogActive="dialogActive" mode="addItem" />
 
     <div class="px-5">
       <div class="flex justify-between align-center">
@@ -14,7 +14,7 @@
         ></v-btn>
       </div>
       <v-form class="md:!mt-10 lg:!mt-10 mt-5" v-if="currentTab === 0">
-        <div class="md:w-1/2 lg:w-1/2 xl:w-1/2 w-full mx-auto">
+        <div class="md:max-2xl:w-1/2 w-full mx-auto">
           <p class="font-semibold mb-2">حوزه فعالیت شما</p>
           <v-select
             variant="outlined"
@@ -34,7 +34,7 @@
         </div>
       </v-form>
       <v-form class="md:!mt-10 lg:!mt-10 mt-5" v-if="currentTab === 1">
-        <div class="md:w-1/2 lg:w-1/2 xl:w-1/2 w-full mx-auto">
+        <div class="md:max-2xl:w-1/2 w-full mx-auto">
           <div>
             <p class="font-semibold mb-2">دسته بندی</p>
 
@@ -78,7 +78,6 @@
                   btn-block
                   type="button"
                   @click-handler="dialog = true"
-
                 />
               </div>
             </div>

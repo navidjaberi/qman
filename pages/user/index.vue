@@ -1,5 +1,5 @@
 <template>
-  <div class="px-15">
+  <div class="md:max-2xl:!px-16 px-4">
     <div class="flex justify-between align-center">
       <p class="text-[24px] font-bold">رایاکافه کرج</p>
       <p class="text-[14px] font-semibold">شماره اشتراک:۴۵۷۸</p>
@@ -70,7 +70,7 @@
             mode="primary"
             text="پیش نمایش منو"
             append="mdi-eye-outline"
-            class="px-4 py-3 mx-3 text-[14px] !font-semibold w-48"
+            class="px-4 py-3  text-[14px] !font-semibold w-48 mx-auto"
           />
           <BaseButtonOutline
             mode="secondary"

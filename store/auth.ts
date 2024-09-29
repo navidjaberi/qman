@@ -8,6 +8,9 @@ export const useAuthentication = defineStore("auth", () => {
   const login=()=>{
     isLoggedIn.value=true
   }
+  const logout=()=>{
+    isLoggedIn.value=false
+  }
   // const tokenCookie = useCookie("userToken");
   // const idCookie = useCookie("userId");
   // const PhoneNumber = ref<string>("");
@@ -32,5 +35,5 @@ export const useAuthentication = defineStore("auth", () => {
   // });
   // Return the properties and functions for external use
   // return { PhoneNumber, PhoneNumberGet, accessToken, accessTokenGet, userId, userIdGet };
-  return { isLoggedIn, isLoggedInGet,login };
+  return { isLoggedIn, isLoggedInGet,login,logout };
 });

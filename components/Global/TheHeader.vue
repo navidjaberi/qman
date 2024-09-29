@@ -40,14 +40,14 @@
       :width="264"
       :permanent="lgAndUp"
     >
-      <div>
-        <div>
+ 
+        <div class="h-[75%]">
           <div class="bg-gray-50 w-full text-center py-3 mt-8">
             <p class="text-main-blue-800 text-[20px] font-black">کیومن</p>
           </div>
           <GlobalTheNavbar direction="vertical" class="my-2 !mt-20 text-black dark:!text-white" />
         </div>
-      </div>
+    
     </v-navigation-drawer>
   </div>
 </template>

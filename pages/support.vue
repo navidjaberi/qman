@@ -1,14 +1,14 @@
 <template>
-  <div class="!px-10">
+  <div class="md:max-2xl:!px-16 px-4 ">
     <h1 class="text-[20px] font-black">با ما در تماس باشید!</h1>
     <p class="mt-3 font-semibold">
       آیا سؤالی دارید؟ یا می‌خواهید ثبت سفارش کنید؟ ما اینجا هستیم تا به شما کمک کنیم! با ما تماس
       بگیرید و تیم کیومن آماده است تا هرگونه نیاز شما را برآورده کند.
     </p>
-    <div class="px-7">
+    <div >
       <v-card
         class="!bg-gradient-to-r from-[#00A6ED] to-[#1F43FF] py-10 px-16 !text-white mx-auto mt-10"
-        width="400"
+        width="300"
       >
         <p class="text-center font-semibold text-[17px]">ارتباط سریع و مشاوره رایگان</p>
         <v-form class="mt-4">

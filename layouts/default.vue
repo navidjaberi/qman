@@ -8,7 +8,7 @@
           
         </v-main>
         <GlobalTheFooter />
-        <GlobalBottomNavbar/>
+        <GlobalBottomNavbar class=" md:max-2xl:hidden"/>
    
     </VApp>
   </div>
