@@ -5,7 +5,7 @@
     </div>
     <div class="mt-5">
       <h1 class="font-bold text-[22px]">چیشد که کیومن شکل گرفت؟</h1>
-      <p class="md:text-[18px] lg:text-[18px] xl:text-[18px] 2xl:text-[18px] text-[12px] mt-4">
+      <p class="md:max-2xl:!text-[18px] text-[12px] mt-4">
         کیومن باتوجه به تغییر قیمت های لحظه ای مواد اولیه مصرفی رستوران و کافه ها، هزینه های سنگین
         طراحی و چاپ منو های کاغذی و البته هم مسیرشدن با پیشرفت تکنولوژی و ارتباط مداوم آدم ها با
         وسایل دیجیتالی، راه حلی برای پایان تمام این دغدغه هاست. لازم به ذکر هستش که بگیم تیم توسعه
@@ -18,7 +18,7 @@
     <div class="mt-5">
       <h1 class="font-bold text-[22px]">چرا کیومن رو انتخاب کنیم؟</h1>
       <div
-        class="mt-5 md:grid lg:grid xl:grid 2xl:grid grid-cols-2 grid-rows-2 gap-10 md:px-20 lg:px-20 xl:px-20 2xl:px-20 my-20"
+        class="mt-5 md:max-2xl:grid grid-cols-2 grid-rows-2 gap-10 md:max-2xl:px-20 my-20"
       >
         <v-card :elevation="20" class="relative my-5" max-width="400" height="230">
           <div class="pa-5">

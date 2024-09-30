@@ -91,6 +91,7 @@
 <script setup lang="ts">
 const currentTab = ref(0);
 const ex4 = ref(false);
+const rules=useFormRules()
 const dialog = ref<boolean>(false);
 const dialogActive = (newVal: boolean) => {
   dialog.value = newVal;

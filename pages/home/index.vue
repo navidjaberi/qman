@@ -87,21 +87,22 @@
             برای انتخاب بهتر و توضیحات کامل کافیه شماره ات رو وارد کنی تا تو سریع ترین زمان باهات
             تماس بگیریم
           </p>
-          <v-text-field-primary
-            class="mt-5"
-            placeholder="شماره تماس خود را وارد کنید"
-            hide-details
-            single-line
-            @click:append-inner=""
-          >
-            <template #append-inner>
-              <BaseButtonFill
-                mode="secondary"
-                prepend="mdi-phone"
-                class="!rounded-r-none !rounded-l-sm !h-[40px]"
-              />
-            </template>
-          </v-text-field-primary>
+          <v-form validate-on="input">
+            <v-text-field-primary
+              class="mt-5"
+              placeholder="شماره تماس خود را وارد کنید"
+              single-line
+              :rules="phone"
+            >
+              <template #append-inner>
+                <BaseButtonFill
+                  mode="secondary"
+                  prepend="mdi-phone"
+                  class="!rounded-r-none !rounded-l-sm !h-[40px]"
+                />
+              </template>
+            </v-text-field-primary>
+          </v-form>
         </div>
         <NuxtImg src="/svg/home/shape-blue.svg" class="w-full"></NuxtImg>
       </div>
@@ -163,6 +164,7 @@
 import { useDisplay } from "vuetify";
 const { lgAndUp } = useDisplay();
 const model = ref();
+const { phone } = useFormRules(false);
 </script>
 
 <style lang="scss">

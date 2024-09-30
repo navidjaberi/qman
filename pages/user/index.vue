@@ -7,7 +7,7 @@
     <div class="md:px-56">
       <div class="flex justify-around my-12">
         <div>
-          <BaseButtonOutline mode="primary" prepend="mdi-comment-outline" class="pa-4 mx-auto" />
+          <BaseButtonOutline mode="primary" prepend="mdi-comment-outline" class="pa-4 mx-auto" @click-handler="$router.push('/user/ticket')" />
           <p class="text-[12px] font-bold mt-2">تیکت پشتیبانی</p>
         </div>
 

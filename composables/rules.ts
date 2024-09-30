@@ -1,4 +1,4 @@
-export const useFormRules = (required?: boolean) => {
+export const useFormRules = (required: boolean = true) => {
   return {
     text: [
       (value: string) => {
@@ -23,7 +23,7 @@ export const useFormRules = (required?: boolean) => {
             value.length === 11 && /^[0-9-]+$/.test(value) && /^09\d{9}$/.test(value);
           const isValidPersian = /^[۰-۹-]+$/.test(value) && /^۰۹[۰-۹]{9}$/.test(value);
           return isValidNumeric || isValidPersian || "شماره تلفن را به درستی وارد کنید";
-        } else if (value?.length >= 0 && required) {
+        } else if (!value && required) {
           return "فیلد اجباری را پر کنید"; // or return an error message if required
         } else {
           return false;

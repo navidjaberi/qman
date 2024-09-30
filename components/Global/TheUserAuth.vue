@@ -6,17 +6,17 @@
       </p>
       <p class="text-[12px] text-gray-500 text-center mt-5">اطلاعات خود را وارد کنید</p>
     </div>
-    <v-form ref="formRef" @submit.prevent="userLogin">
+    <v-form ref="formRef" @submit.prevent="userLogin" validate-on="submit">
       <v-container class="mt-6 rtl">
         <v-row>
           <v-col cols="12" v-if="!singInDialogActive">
             <p class="px-2 text-[12px] mb-1">نام مجموعه شما</p>
-            <v-text-field-primary required  placeholder="جابرکافه">
+            <v-text-field-primary required  placeholder="جابرکافه" :rules="rules.text">
             </v-text-field-primary>
           </v-col>
           <v-col cols="12 pt-0">
             <p class="px-2 text-[12px] mb-1">شماره تماس</p>
-            <v-text-field-primary required  placeholder="10 10 100 0912">
+            <v-text-field-primary required  placeholder="10 10 100 0912" :rules="rules.phone">
             </v-text-field-primary>
           </v-col>
         </v-row>
@@ -42,13 +42,19 @@
 
 <script setup>
 const singInDialogActive = ref(true);
+const rules=useFormRules()
 const emit = defineEmits(["signedIn", "signedUp"]);
-const userLogin = () => {
-  if (singInDialogActive.value) {
+const formRef=ref(null)
+const userLogin =async () => {
+  const { valid } = await formRef.value.validate();
+  if (valid){
+    if (singInDialogActive.value) {
     emit("signedIn");
   } else {
     emit("signedUp");
   }
+  }
+
 };
 </script>
 

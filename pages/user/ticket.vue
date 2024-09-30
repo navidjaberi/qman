@@ -9,6 +9,7 @@
           class="mt-5 py-10 !font-black !text-[22px]"
           btn-block
           rounded="xl"
+          @click-handler="$router.push('/user/record-ticket')"
         />
       </div>
     </div>

@@ -8,7 +8,7 @@
         <v-row>
           <v-col cols="12 pt-0">
             <p class="px-2 text-[12px] mb-1">نام آیتم موردنظر را وارد نمائید</p>
-            <v-text-field-primary required > </v-text-field-primary>
+            <v-text-field-primary required :rules="rules.text"> </v-text-field-primary>
           </v-col>
         </v-row>
         <BaseButtonFill
@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-
+const rules=useFormRules()
 </script>
 
 <style></style>
