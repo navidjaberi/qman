@@ -5,7 +5,7 @@
       v-for="(item, index) in items"
       :key="item.id"
       :value="item.title"
-      class="border border-gray-300 rounded-lg w-11/12 mb-3"
+      class="border border-gray-300 rounded-lg w-11/12 mb-3 !text-black"
       active-class="!bg-[#E5F8F0]"
       :height="44"
       :active="route.path === item.link"
