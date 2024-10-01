@@ -23,21 +23,17 @@ $family: "yekanBakh", "iransansxv", "Inter", apple-system, BlinkMacSystemFont, "
 }
 @font-face {
   font-family: "iransansxv";
-  src: url("../fonts/IRANSansX-Regular.woff") format("woff-variations"),
-    /* will be the standard and works in Safari now */ url("../fonts/IRANSansX-Regular.woff")
+  src: url("iransansxv.woff") format("woff-variations"),
+    /* will be the standard and works in Safari now */ url("../fonts/Iransansxv.woff")
       format("woff");
   /* for the other supporting browsers */
   font-weight: 100 1000;
   font-display: fallback;
 }
-@font-face {
-  font-family: "yekanBakh";
-  src: url("../fonts/YekanBakh-Regular.woff") format("woff"),
-    /* will be the standard and works in Safari now */ url("../fonts/YekanBakh-Regular.woff")
-      format("woff");
-  /* for the other supporting browsers */
-
-  font-display: fallback;
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: "iransansxv", iransansx, tahoma;
+  }
 }
 
 .v-list-item__prepend {
