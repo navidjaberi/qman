@@ -38,21 +38,11 @@
       text="اطلاعات بیشتر"
       mode="primary"
     ></BaseButtonOutline>
-    <div class="mt-9 relative slide px-5">
+    <div class="mt-9 relative  px-5">
       <p class="text-[16px] !font-black">
         نگاهی به قالب های <span class="text-[18px] text-gr"> کیومن</span>
       </p>
-      <v-slide-group
-        v-model="model"
-        class="ltr mt-5"
-        selected-class="bg-primary"
-        multiple
-        show-arrows
-        prev-icon="mdi-chevron-left-circle-outline"
-        next-icon="mdi-chevron-right-circle-outline"
-      >
-        <CardTemplate v-for="n in 15" :key="n" />
-      </v-slide-group>
+    <BaseTemplateSlider />
     </div>
     <div class="mt-8 px-4">
       <div class="flex md:w-5/6 lg:w-4/6 mx-auto h-full items-end">
@@ -163,7 +153,6 @@
 <script setup>
 import { useDisplay } from "vuetify";
 const { lgAndUp } = useDisplay();
-const model = ref();
 const { phone } = useFormRules(false);
 </script>
 

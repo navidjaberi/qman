@@ -1,71 +1,561 @@
 <template>
-  <v-slide-group
-    v-model="model"
-    class="ltr mt-5"
-    selected-class="bg-primary"
-    multiple
-    show-arrows
-    prev-icon="mdi-chevron-left-circle-outline"
-    next-icon="mdi-chevron-right-circle-outline"
-  >
-    <CardTemplate v-for="n in 15" :key="n" />
-  </v-slide-group>
+  <div v-for="i in templates" class="relative">
+    <v-slide-group
+      class=" mt-10 px-8"
+      show-arrows
+   
+      v-model="i.name"
+    >
+      <v-slide-group-item v-slot="{ isSelected, toggle, selectedClass }">
+        <template v-for="item in i.modes">
+          <template v-for="img in item.previews">
+            <v-card class="mx-auto" v-if="item.active">
+              <v-img
+                :src="img.src"
+                width="250px"
+                height="400px"
+                cover
+                class="align-end rounded-lg"
+                transition="fade-transition"
+              >
+                <div class="bg-white py-1 mb-2 px-2">
+                  <p class="text-black font-semibold text-right text-[15px]">{{ img.title }}</p>
+                </div>
+              </v-img>
+            </v-card>
+          </template>
+        </template>
+      </v-slide-group-item>
+    </v-slide-group>
+    <div>
+      <div class="justify-center mt-5 flex">
+        <div
+          v-for="item in i.modes"
+          class="rounded-full mx-1 cursor-pointer size-4 border-2 border-solid border-gray-300"
+          :class="[item.color, item.active ? 'size-7' : 'size-6']"
+          @mouseover="toggles(item, i)"
+        ></div>
+      </div>
+    </div>
+    <p class="text-center">برای تغییر، ماوس را روی دایره های رنگی ببرید</p>
+  </div>
 </template>
-
 <script setup>
-const model = ref();
 const templates = ref([
   {
     name: "fantasy",
     modes: [
       {
+        active: true,
+        name: "fantasyBlue",
+        color: "bg-[#3F88C5]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/fantasy/Blue/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/fantasy/Blue/Menu.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/fantasy/Blue/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "fantasyGold",
+        color: "bg-[#ECAA4C]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/fantasy/Gold/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/fantasy/Gold/Menu.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/fantasy/Gold/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "fantasyMint",
+        color: "bg-[#5FBB97]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/fantasy/Mint/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/fantasy/Mint/Menu.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/fantasy/Mint/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "fantasyPink",
+        color: "bg-[#FF70A2]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/fantasy/Pink/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/fantasy/Pink/Menu.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/fantasy/Pink/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "fantasyPurple",
+        color: "bg-[#984CA9]",
+
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/fantasy/Purple/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/fantasy/Purple/Menu.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/fantasy/Purple/Mini-Site.png",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "local",
+    modes: [
+      {
+        active: true,
+        name: "localBlue",
+        color: "bg-[#3F88C5]",
+
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/local/Blue/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/local/Blue/Menu.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/local/Blue/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "localMain",
+        color: "bg-[#ECAA4C]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/local/Main/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/local/Main/Menu.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/local/Main/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "localMint",
+        color: "bg-[#5FBB97]",
+
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/local/Mint/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/local/Mint/Menu.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/local/Mint/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "localOrange",
+        color: "bg-[#F87D3A]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/local/Orange/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/local/Orange/Menu.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/local/Orange/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "localYellow",
+        color: "bg-[#ECAA4C]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/local/Yellow/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/local/Yellow/Menu.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/local/Yellow/Mini-Site.png",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "minimal",
+    modes: [
+      {
+        active: true,
         name: "blue",
-        imgs: [
-          "/templates/fantasy/Blue/Home.png",
-          "/templates/fantasy/Blue/Menu.png",
-          "/templates/fantasy/Blue/Mini-Site.png",
+        color: "bg-[#3F88C5]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/minimal/Blue/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/minimal/Blue/Cart.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/minimal/Blue/Mini-Site.png",
+          },
         ],
-        color: "",
       },
       {
-        name: "gold",
-        imgs: [
-          "/templates/fantasy/Gold/Home.png",
-          "/templates/fantasy/Gold/Menu.png",
-          "/templates/fantasy/Gold/Mini-Site.png",
+        active: false,
+        name: "brown",
+        color: "bg-[#E0B47B]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/minimal/Brown/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/minimal/Brown/Cart.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/minimal/Brown/Mini-Site.png",
+          },
         ],
-        color: "",
       },
       {
-        name: "mint",
-        imgs: [
-          "/templates/fantasy/Mint/Home.png",
-          "/templates/fantasy/Mint/Menu.png",
-          "/templates/fantasy/Mint/Mini-Site.png",
+        active: false,
+        name: "lightRed",
+        color: "bg-[#B80000]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/minimal/light-Red/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/minimal/light-Red/Cart.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/minimal/light-Red/Mini-Site.png",
+          },
         ],
-        color: "",
       },
       {
-        name: "pink",
-        imgs: [
-          "/templates/fantasy/Pink/Home.png",
-          "/templates/fantasy/Pink/Menu.png",
-          "/templates/fantasy/Pink/Mini-Site.png",
+        active: false,
+        name: "lime",
+        color: "bg-[#ECAA4C]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/minimal/Lime/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/minimal/Lime/Cart.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/minimal/Lime/Mini-Site.png",
+          },
         ],
-        color: "",
       },
       {
+        active: false,
         name: "purple",
-        imgs: [
-          "/templates/fantasy/Purple/Home.png",
-          "/templates/fantasy/Purple/Menu.png",
-          "/templates/fantasy/Purple/Mini-Site.png",
+        color: "bg-[#984CA9]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/minimal/Purple/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/minimal/Purple/Cart.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/minimal/Purple/Mini-Site.png",
+          },
         ],
-        color: "",
+      },
+    ],
+  },
+  {
+    name: "modern",
+    modes: [
+      {
+        active: true,
+        name: "modernBlack",
+        color: "bg-[#3B3E40]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/modern/Black/Home.jpg",
+          },
+          {
+            title: "منو",
+            src: "/templates/modern/Black/Menu.jpg",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/modern/Black/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "modernGreen",
+        color: "bg-[#5FBB97]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/modern/Gunmetal-Green/Home.jpg",
+          },
+          {
+            title: "منو",
+            src: "/templates/modern/Gunmetal-Green/Menu.jpg",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/modern/Gunmetal-Green/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "modernDarkRed",
+        color: "bg-[#B80000]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/modern/Dark-Red/Home.jpg",
+          },
+          {
+            title: "منو",
+            src: "/templates/modern/Dark-Red/Menu.jpg",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/modern/Dark-Red/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "modernBlue",
+        color: "bg-[#3F88C5]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/modern/Oxford-Blue/Home.jpg",
+          },
+          {
+            title: "منو",
+            src: "/templates/modern/Oxford-Blue/Menu.jpg",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/modern/Oxford-Blue/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "modernPurple",
+        color: "bg-[#984CA9]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/modern/Purple/Home.jpg",
+          },
+          {
+            title: "منو",
+            src: "/templates/modern/Purple/Menu.jpg",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/modern/Purple/Mini-Site.png",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: "sonnati",
+    modes: [
+      {
+        active: true,
+        name: "sonnatiCharcoal",
+        color: "bg-[#3B3E40]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/sonnati/Charcoal/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/sonnati/Charcoal/Menu.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/sonnati/Charcoal/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "sonnatiGold",
+        color: "bg-[#ECAA4C]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/sonnati/Gold/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/sonnati/Gold/Menu.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/sonnati/Gold/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "sonnatiGreen",
+        color: "bg-[#5FBB97]",
+
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/sonnati/Green/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/sonnati/Green/Menu.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/sonnati/Green/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "sonnatiBlue",
+        color: "bg-[#3F88C5]",
+
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/sonnati/Persian-Blue/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/sonnati/Persian-Blue/Menu.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/sonnati/Persian-Blue/Mini-Site.png",
+          },
+        ],
+      },
+      {
+        active: false,
+        name: "sonnatiRed",
+        color: "bg-[#B80000]",
+        previews: [
+          {
+            title: "صفحه اصلی",
+            src: "/templates/sonnati/Red/Home.png",
+          },
+          {
+            title: "منو",
+            src: "/templates/sonnati/Red/Menu.png",
+          },
+          {
+            title: "مینی سایت",
+            src: "/templates/sonnati/Red/Mini-Site.png",
+          },
+        ],
       },
     ],
   },
 ]);
+const toggles = (item, i) => {
+  i.modes.forEach((el) => {
+    el.active = false;
+    if (el.name === item.name) {
+      item.active = true;
+    }
+  });
+};
 </script>
 
 <style></style>
